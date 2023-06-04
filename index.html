@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Clima</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="hero">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="./fotos/sunrise.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="contenedor">
+        <h1>Consulta del Clima</h1>
+
+        <div>
+            <label class="etiqueta" for="ciudad">Ciudad:</label>
+        </div>
+
+            <input class="btn btn-outline-light" type="text" id="ciudad">
+            <button class="btn btn-outline-light; ion" onclick="consultarClima()"><ion-icon name="rainy-outline"></ion-icon></button>
+            <br><br>
+        <div>
+            <label class="etiqueta" for="ciudades">Ciudades:</label>
+        </div>
+
+        <div>
+            <input class="btn btn-outline-light" type="text" id="ciudades" value="London, Paris, Berlin">
+            <button class="btn btn-outline-light; ion" onclick="consultarClimas()"><div class="consulta-btn"><ion-icon name="rainy-outline"></ion-icon></div></button>
+        </div>
+        
+        <br><br>
+
+        <div>
+            <button class="btn btn-outline-light" onclick="limpiarTabla()" class="btn">Limpiar</button>
+        </div>
+
+        <br><br>
+
+        <div>
+            <table id="tabla-clima">
+                <thead>
+                    <tr>
+                        <th>Ciudad</th>
+                        <th>Temperatura</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+   
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    </div>
+
+</body>
+</html>
