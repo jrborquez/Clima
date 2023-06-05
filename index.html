@@ -10,12 +10,10 @@
     
 </head>
 <body>
-    
-    <video autoplay loop muted plays-inline class="back-video">
+    <video autoplay muted loop plays-inline class="back-video">
         <source src="./fotos/sunrise.mp4" type="video/mp4">
     </video>
- 
-
+<br><br>
     <div class="contenedor">
         <h1>Consulta del Clima</h1>
 
@@ -35,16 +33,16 @@
             <button class="btn btn-outline-light; ion" onclick="consultarClimas()"><div class="consulta-btn"><ion-icon name="rainy-outline"></ion-icon></div></button>
         </div>
         
-        <br><br>
+        <br>
+
+        <center>
+            <button class="btn btn-outline-light" onclick="limpiarTabla()" class="btnLimpiar">Limpiar</button>
+        </center>
+
+        <br>
 
         <div>
-            <button class="btn btn-outline-light" onclick="limpiarTabla()" class="btn">Limpiar</button>
-        </div>
-
-        <br><br>
-
-        <div>
-            <table id="tabla-clima">
+            <table class="table" id="tabla-clima">
                 <thead>
                     <tr>
                         <th>Ciudad</th>
@@ -61,6 +59,7 @@
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     </div>
-
+    
+  
 </body>
 </html>

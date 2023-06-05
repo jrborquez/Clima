@@ -13,22 +13,19 @@ body{
 }
 .contenedor{
     margin: auto;
-    margin-top: 40px;
     width: 450px;
     min-height: 35rem;
     border-radius: 2rem;
     align-content: center;
     align-items: center;
     border: 4px solid rgb(126, 215, 249);
-    /*background: linear-gradient(0deg, rgb(0, 153, 255), 25%, rgb(14, 95, 149,rgba(0, 153, 255)));*/  
-    background-color: rgba(23, 98, 148, 0.5);
+    /*background: linear-gradient(0deg, rgb(0, 153, 255), 25%, rgb(14, 95, 149), rgba(0, 153, 255)));*/  
+    background-color: rgba(14, 95, 149, .6);
     padding: 2%;
 }
 
-
 .btn, .btn-outline-light{
     color: rgb(185, 236, 250);
-    padding: 2px 6px;
 }
 .btn:hover{
     color: rgb(14, 95, 149);
@@ -46,47 +43,33 @@ body{
     color: #b6f4f2;
 }
 
-input{
-    border: #b6f4f2 solid 0px,0px,1px,0px;
-    background-color: none;
-}
-
-
-
-/* Se le borran al boton todos los atributos */
-/* button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-} */
-
-
-
-
-
 table {
     border-collapse: collapse;
     margin: auto;
+    border-radius: .8rem;
 }
 
+table tr{
+    background-color: rgba(14, 95, 149, 0.5);
+    color: rgb(185, 236, 250);
+    border-radius: .8rem;
+}
 th, td {
-    border: 1px solid black;
     padding: 8px;
     text-align: center;
+    font-weight: 400;
+    font-size: 12pt;
 }
 
 h1{
+    margin-top: 10px;
     text-align: center;
     color: rgb(185, 236, 250);
 }
 
 #ciudad{
     width: 93%;
-    
+    flex-wrap: 10%;
 }
 
 #ciudades{
@@ -95,14 +78,28 @@ h1{
 
 .back-video{
     position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+    margin: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* es la posición de overlap donde quiero ubicar el video */
 }
 
 @media (min-aspect-ratio: 16/9){
-    .back-video{
+        .back-video{
         width: 100%;
-        height: auto;
+        height: 100%;
     }
 }
+
+@media (max-width:550px){
+    .contenedor{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+
+}
+
