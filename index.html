@@ -10,38 +10,32 @@
     
 </head>
 <body>
-    <video autoplay muted loop plays-inline class="back-video">
-        <source src="./fotos/sunrise.mp4" type="video/mp4">
-    </video>
-<br><br>
+    
+    <video autoplay muted loop plays-inline class="back-video" src="./fotos/sunrise.mp4" type="video/mp4"></video>
+    <center><audio controls autoplay loop src="./fotos/Feel_so_good_Trumpet_.mp3"/></center>
+    
     <div class="contenedor">
         <h1>Consulta del Clima</h1>
 
-        <div>
             <label class="etiqueta" for="ciudad">Ciudad:</label>
-        </div>
-
+       
             <input class="btn btn-outline-light" type="text" id="ciudad">
-            <button class="btn btn-outline-light; ion" onclick="consultarClima()"><ion-icon name="rainy-outline"></ion-icon></button>
+                <button class="btn btn-outline-light; ion" onclick="consultarClima()"><ion-icon name="rainy-outline"></ion-icon></button>
             <br><br>
-        <div>
+       
             <label class="etiqueta" for="ciudades">Ciudades:</label>
-        </div>
-
-        <div>
-            <input class="btn btn-outline-light" type="text" id="ciudades" value="London, Paris, Berlin">
-            <button class="btn btn-outline-light; ion" onclick="consultarClimas()"><div class="consulta-btn"><ion-icon name="rainy-outline"></ion-icon></div></button>
-        </div>
         
-        <br>
-
+            <input class="btn btn-outline-light" type="text" id="ciudades" value="London, Paris, Berlin">
+                <button class="btn btn-outline-light; ion" onclick="consultarClimas()"><ion-icon name="rainy-outline"></ion-icon></button>
+            <br><br>
+       
         <center>
             <button class="btn btn-outline-light" onclick="limpiarTabla()" class="btnLimpiar">Limpiar</button>
         </center>
 
         <br>
 
-        <div>
+        <div class="tableMargin">
             <table class="table" id="tabla-clima">
                 <thead>
                     <tr>
@@ -54,12 +48,16 @@
 
                 </tbody>
             </table>
+            
         </div>
    
-    <script src="script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+        <script src="script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     </div>
+
+<footer>
     
-  
+</footer>
 </body>
+
 </html>

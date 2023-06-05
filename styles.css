@@ -76,6 +76,7 @@ h1{
     width: 93%;
 }
 
+
 .back-video{
     position: absolute;
     margin: 0%;
@@ -83,6 +84,11 @@ h1{
     height: 100%;
     object-fit: cover;
     z-index: -1; /* es la posición de overlap donde quiero ubicar el video */
+}
+
+audio{
+    width: 20%;
+    margin-bottom: 10px;
 }
 
 @media (min-aspect-ratio: 16/9){
@@ -99,7 +105,9 @@ h1{
         flex-direction: column;
     }
     
-
+    .tableMargin{
+    margin-top: 12px;
+    }
 
 }
 
