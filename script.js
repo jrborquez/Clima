@@ -14,16 +14,12 @@ function consultarClima(){
     .then(data =>{
         const tabla = document.getElementById('tabla-clima').getElementsByTagName('tbody')[0];
         const fila = tabla.insertRow();
-        const elTimezone = data.timezone;
-        const dateTime = new Date(data.dt * 1000);
-        const toUtc = dateTime.getTime() + dateTime.getTimezoneOffset() * 60000;
-        const currentLocalTime = toUtc + 1000 * elTimezone;
-        const selectedDate = new Date(currentLocalTime).toLocaleString('es-MX',{dateStyle:'short', timeStyle:'short'});
+        const horaDeCiudad = (new Date().getTimezoneOffset()*60000) + (new Date().getTime()) + data.timezone * 1000;
 
         fila.insertCell().innerHTML = data.name;
         fila.insertCell().innerHTML = `${(data.main.temp - 273.15).toFixed(1)}°C`;
         fila.insertCell().innerHTML = data.weather[0].description;
-        fila.insertCell().innerHTML = selectedDate;
+        fila.insertCell().innerHTML = new Date(horaDeCiudad).toLocaleString();
     });
 };
 
@@ -47,16 +43,11 @@ function consultarClimas(){
         const tabla = document.getElementById('tabla-clima').getElementsByTagName('tbody')[0];
         data.forEach(ciudad => {
             const fila = tabla.insertRow();
-            const timeZone = data.timezone * 1000;
-            const dateTime = new Date(data.dt * 1000);
-            const toUtc = dateTime.getTime() + dateTime.getTimezoneOffset() * 60000;
-            const currentLocalTime = toUtc + timeZone;
-            const selectedDate = new Date(currentLocalTime).toLocaleString('es-MX',{dateStyle:'short', timeStyle:'short'});
             
             fila.insertCell().innerHTML = ciudad.name;
             fila.insertCell().innerHTML = `${(ciudad.main.temp - 273.15).toFixed(1)}°C`;
             fila.insertCell().innerHTML = ciudad.weather[0].description;
-            fila.insertCell().innerHTML = selectedDate;
+            fila.insertCell().innerHTML = new Date(ciudad.timezone * 1000+(new Date().getTime())).toUTCString();
         });
     })
     .catch(error=>{

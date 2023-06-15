@@ -1,6 +1,6 @@
 
 
-    const ciudad = 'London';
+    const ciudad = 'Guadalajara';
     const API_KEY = '7988e38cdeafad1d912e3c3ab218ad65';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}&lang=es`;
 
@@ -13,17 +13,13 @@
         }
     })
     .then(data =>{
-        const dateGMT = new Date().getTime();
-        const ciudadTimezone = data.timezone*1000; 
-        const tiempoCiudad = new Date(ciudadTimezone).toUTCString();
-        const tiempoCiudad2 = new Date(dateGMT).toLocaleString();
-        const horaFinal = dateGMT+ciudadTimezone;
-        const yaHora = new Date(dateGMT + ciudadTimezone).toLocaleString();
-    
-        console.log(dateGMT + ' son milisegundos');
-        console.log(ciudadTimezone);
-        console.log(tiempoCiudad);
-        console.log(`ciudad 2 ${tiempoCiudad2}`);
-        console.log(horaFinal);
-        console.log(yaHora);
+       
+        const timeZoneLocal = (new Date().getTimezoneOffset()*60000) +  (new Date().getTime());
+        const horaDeCiudad = timeZoneLocal + data.timezone * 1000;
+        const fechaImprimir = new Date(horaDeCiudad).toLocaleString();
+
+        const fechaCiudad = new Date(data.timezone * 1000+(new Date().getTime())).toUTCString();
+        
+        console.log(fechaImprimir);
+        console.log(fechaCiudad);
     });
