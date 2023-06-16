@@ -14,15 +14,13 @@ function consultarClima(){
     .then(data =>{
         const tabla = document.getElementById('tabla-clima').getElementsByTagName('tbody')[0];
         const fila = tabla.insertRow();
-        const horaDeCiudad = (new Date().getTimezoneOffset()*60000) + (new Date().getTime()) + data.timezone * 1000;
-
+        
         fila.insertCell().innerHTML = data.name;
         fila.insertCell().innerHTML = `${(data.main.temp - 273.15).toFixed(1)}°C`;
         fila.insertCell().innerHTML = data.weather[0].description;
-        fila.insertCell().innerHTML = new Date(horaDeCiudad).toLocaleString();
+        fila.insertCell().innerHTML = new Date(data.timezone * 1000 + new Date().getTime() + new Date().getTimezoneOffset()*60000 ).toLocaleString('es-MX',{timeStyle:'medium', hour12:'true'});
     });
 };
-
 
 function consultarClimas(){
     const ciudades = document.getElementById('ciudades').value.split(',').map(ciudad => ciudad.trim());
@@ -47,13 +45,12 @@ function consultarClimas(){
             fila.insertCell().innerHTML = ciudad.name;
             fila.insertCell().innerHTML = `${(ciudad.main.temp - 273.15).toFixed(1)}°C`;
             fila.insertCell().innerHTML = ciudad.weather[0].description;
-            fila.insertCell().innerHTML = new Date(ciudad.timezone * 1000+(new Date().getTime())).toUTCString();
+            fila.insertCell().innerHTML = new Date(ciudad.timezone * 1000 + new Date().getTime() + new Date().getTimezoneOffset()*60000).toLocaleString('es-MX',{timeStyle:'medium', hour12:'true'});
         });
     })
     .catch(error=>{
         alert('Error al consultar el clima', error);
     });
-    
 };
 
 function limpiarTabla(){

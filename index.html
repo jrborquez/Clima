@@ -12,7 +12,7 @@
 <body>
     
     <video autoplay muted loop plays-inline class="back-video" src="./fotos/sunrise.mp4" type="video/mp4"></video>
-    <center><audio controls autoplay loop src="./fotos/Feel_so_good_Trumpet_.mp3"/></center>
+    <center><audio controls loop src="./fotos/Feel_so_good_Trumpet_.mp3"/></center>
     
     <div class="contenedor">
         <h1>Consulta del Clima</h1>
@@ -35,10 +35,10 @@
 
         <br>
 
-        <div class="tableMargin">
-            <table class="table" id="tabla-clima">
-                <thead>
-                    <tr class="rowClima">
+        <div class="tableMargin" name="divTable">
+            <table class="table" id="tabla-clima" name="table">
+                <thead name="tableHead">
+                    <tr class="rowClima" name="tableRow">
                         <th>Ciudad</th>
                         <th>Temperatura</th>
                         <th>Descripción</th>
@@ -56,9 +56,6 @@
         <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     </div>
 
-<footer>
-    
-</footer>
 </body>
 
 </html>
