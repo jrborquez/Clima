@@ -109,6 +109,8 @@ audio{
     .tableMargin{
     margin-top: 12px;
     }
-
+    .back-video{
+        display: none;
+    }
 }
 
